@@ -4,7 +4,7 @@ import { CalendarCell } from "./CalendarCell";
 import { CalendarDay } from "components/Calendar/types";
 import { changeEvent } from "store";
 import { DragDropContext, DropResult } from "react-beautiful-dnd";
-import { MonthGridWrapper } from "./styled-components";
+import { MonthGridContainer } from "./styled-components";
 import { useDispatch } from "react-redux";
 
 interface MonthGridProps {
@@ -58,13 +58,13 @@ export const MonthGrid: React.FC<MonthGridProps> = React.memo(
     };
 
     return (
-      <MonthGridWrapper>
+      <MonthGridContainer>
         <DragDropContext onDragEnd={onDragEnd}>
           {days.map((day) => (
             <CalendarCell day={day} key={day.value} />
           ))}
         </DragDropContext>
-      </MonthGridWrapper>
+      </MonthGridContainer>
     );
   },
 );

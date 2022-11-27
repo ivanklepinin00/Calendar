@@ -1,5 +1,5 @@
 import React from "react";
-import { HolidayComponentWrapper } from "./styled-components";
+import { HolidayComponentContainer } from "./styled-components";
 import { PublicHoliday } from "api/Nager/types";
 
 interface HolidayComponentProps {
@@ -8,5 +8,7 @@ interface HolidayComponentProps {
 export const HolidayComponent: React.FC<HolidayComponentProps> = ({
   holiday,
 }) => {
-  return <HolidayComponentWrapper>{holiday.localName}</HolidayComponentWrapper>;
+  return (
+    <HolidayComponentContainer>{holiday.localName}</HolidayComponentContainer>
+  );
 };

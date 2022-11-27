@@ -1,6 +1,6 @@
 import moment from "moment";
 import React, { ChangeEvent, useState } from "react";
-import { availableLabels } from "components/Calendar/constant";
+import { AVAILABLE_LABELS } from "components/Calendar/constant";
 import { selectCalendar, setEvents, setFilters } from "store";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -15,10 +15,10 @@ import {
   TextField,
 } from "@mui/material";
 import {
-  CalendarFiltersWrapper,
-  FileProcessWrapper,
-  FiltersWrapper,
-  NavigationWrapper,
+  CalendarFiltersContainer,
+  FileProcessContainer,
+  FiltersContainer,
+  NavigationContainer,
 } from "./styled-components";
 
 interface CalendarFiltersProps {
@@ -106,8 +106,8 @@ export const CalendarFilters: React.FC<CalendarFiltersProps> = ({
   };
 
   return (
-    <CalendarFiltersWrapper>
-      <FileProcessWrapper>
+    <CalendarFiltersContainer>
+      <FileProcessContainer>
         <button onClick={onImageDownload}>Download As Image</button>
         <button onClick={jsonFileDownload}>Download JSON File</button>
 
@@ -118,9 +118,9 @@ export const CalendarFilters: React.FC<CalendarFiltersProps> = ({
           onChange={jsonFileUpload}
           accept=".json"
         />
-      </FileProcessWrapper>
+      </FileProcessContainer>
 
-      <NavigationWrapper>
+      <NavigationContainer>
         <Button variant="outlined" onClick={prevMonthHandler}>
           Prev
         </Button>
@@ -130,9 +130,9 @@ export const CalendarFilters: React.FC<CalendarFiltersProps> = ({
         <Button variant="outlined" onClick={nextMonthHandler}>
           Next
         </Button>
-      </NavigationWrapper>
+      </NavigationContainer>
 
-      <FiltersWrapper>
+      <FiltersContainer>
         <FormControl sx={{ s: 4, width: 100 }} size="small">
           <InputLabel id="demo-multiple-checkbox-label">Labels</InputLabel>
           <Select
@@ -144,7 +144,7 @@ export const CalendarFilters: React.FC<CalendarFiltersProps> = ({
             input={<OutlinedInput label="Labels" />}
             renderValue={(selected) => selected.join(", ")}
           >
-            {availableLabels.map((label) => (
+            {AVAILABLE_LABELS.map((label) => (
               <MenuItem key={label} value={label}>
                 <Checkbox
                   checked={labels.includes(label)}
@@ -174,7 +174,7 @@ export const CalendarFilters: React.FC<CalendarFiltersProps> = ({
         <Button variant="outlined" onClick={onFiltersClear}>
           Clear
         </Button>
-      </FiltersWrapper>
-    </CalendarFiltersWrapper>
+      </FiltersContainer>
+    </CalendarFiltersContainer>
   );
 };

@@ -1,17 +1,17 @@
 import styled from "styled-components";
 
-export const CalendarGridWrapper = styled.div`
+export const CalendarGridContainer = styled.div`
   width: 100%;
 `;
 
-export const MonthGridWrapper = styled.div`
+export const MonthGridContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 0.3rem;
   padding: 10px;
 `;
 
-export const CalendarHeaderWrapper = styled.div`
+export const CalendarHeaderContainer = styled.div`
   width: 100%;
 
   h2 {
@@ -30,11 +30,11 @@ export const CalendarHeaderCells = styled.div`
   }
 `;
 
-interface CalendarCellWrapperProps {
+interface CalendarCellContainerProps {
   isCurrentMonth: boolean;
 }
 
-export const CalendarCellWrapper = styled.div<CalendarCellWrapperProps>`
+export const CalendarCellContainer = styled.div<CalendarCellContainerProps>`
   height: 150px;
   background-color: ${(props) =>
     props.isCurrentMonth ? "lightgrey" : "#ebebeb"};
@@ -68,7 +68,7 @@ export const CalendarCellBody = styled.div`
   max-height: 128px;
 `;
 
-export const CalendarEventWrapper = styled.div`
+export const CalendarEventContainer = styled.div`
   width: 100%;
   padding: 7px;
   font-size: 16px;
@@ -81,7 +81,7 @@ export const CalendarEventWrapper = styled.div`
   }
 `;
 
-export const CalendarEventLabelWrapper = styled.div`
+export const CalendarEventLabelContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0.3rem;
@@ -95,7 +95,7 @@ export const CalendarEventLabel = styled.span`
   height: 7px;
 `;
 
-export const HolidayComponentWrapper = styled.div`
+export const HolidayComponentContainer = styled.div`
   background-color: blue;
   color: white;
   padding: 5px;

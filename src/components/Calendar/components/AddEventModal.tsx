@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
-import { availableLabels } from "../constant";
+import { AVAILABLE_LABELS } from "../constant";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addEvent,
@@ -8,7 +8,7 @@ import {
   selectEventModal,
 } from "store";
 import {
-  CheckboxGroupWrapper,
+  CheckboxGroupContainer,
   StyledDialogActions,
   StyledTypography,
 } from "./styled-components";
@@ -92,8 +92,8 @@ export const AddEventModal: React.FC = () => {
             <FormLabel id="demo-controlled-radio-buttons-group">
               Labels
             </FormLabel>
-            <CheckboxGroupWrapper>
-              {availableLabels.map((label) => (
+            <CheckboxGroupContainer>
+              {AVAILABLE_LABELS.map((label) => (
                 <Checkbox
                   checked={labels.includes(label)}
                   key={label}
@@ -106,7 +106,7 @@ export const AddEventModal: React.FC = () => {
                   }}
                 />
               ))}
-            </CheckboxGroupWrapper>
+            </CheckboxGroupContainer>
 
             <TextField
               id="outlined-multiline-static"

@@ -1,7 +1,7 @@
 import moment from "moment";
 import React, { useEffect, useState } from "react";
 import { CalendarEvent, View } from "components/Calendar/types";
-import { CalendarGridWrapper } from "./styled-components";
+import { CalendarGridContainer } from "./styled-components";
 import { CalendarHeader, MonthGrid } from ".";
 import { getDaysForCurrentMonth } from "components/Calendar/helpers";
 
@@ -22,10 +22,10 @@ export const CalendarGrid: React.FC<CalendarGridProps> = React.memo(
     }, [currentDate, events]);
 
     return (
-      <CalendarGridWrapper>
+      <CalendarGridContainer>
         <CalendarHeader currentDate={currentDate} />
         {view === View.MONTH && <MonthGrid days={days} setDays={setDays} />}
-      </CalendarGridWrapper>
+      </CalendarGridContainer>
     );
   },
 );

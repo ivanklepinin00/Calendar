@@ -13,7 +13,7 @@ import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import {
   CalendarCellBody,
   CalendarCellHeader,
-  CalendarCellWrapper,
+  CalendarCellContainer,
 } from "./styled-components";
 
 interface CalendarCellProps {
@@ -39,7 +39,7 @@ export const CalendarCell: React.FC<CalendarCellProps> = React.memo(
     return (
       <Droppable key={day.id} droppableId={day.id}>
         {(provided) => (
-          <CalendarCellWrapper
+          <CalendarCellContainer
             isCurrentMonth={isCurrentMonth}
             ref={provided.innerRef}
             {...provided.droppableProps}
@@ -64,7 +64,7 @@ export const CalendarCell: React.FC<CalendarCellProps> = React.memo(
             </CalendarCellBody>
 
             {provided.placeholder}
-          </CalendarCellWrapper>
+          </CalendarCellContainer>
         )}
       </Droppable>
     );

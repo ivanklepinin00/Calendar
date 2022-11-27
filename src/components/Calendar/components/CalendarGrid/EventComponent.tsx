@@ -4,8 +4,8 @@ import { setEventModal } from "store";
 import { useDispatch } from "react-redux";
 import {
   CalendarEventLabel,
-  CalendarEventLabelWrapper,
-  CalendarEventWrapper,
+  CalendarEventLabelContainer,
+  CalendarEventContainer,
 } from "./styled-components";
 
 interface EventComponentProps {
@@ -27,22 +27,22 @@ export const EventComponent: React.FC<EventComponentProps> = ({
   return (
     <Draggable key={event.id} draggableId={event.id} index={index}>
       {(provided) => (
-        <CalendarEventWrapper
+        <CalendarEventContainer
           ref={provided.innerRef}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
           onClick={onEventClick}
         >
           {showLabels && (
-            <CalendarEventLabelWrapper>
+            <CalendarEventLabelContainer>
               {event.labels.map((label, i) => (
                 <CalendarEventLabel color={label} key={`${label} ${i}`} />
               ))}
-            </CalendarEventLabelWrapper>
+            </CalendarEventLabelContainer>
           )}
 
           <p>{event.text}</p>
-        </CalendarEventWrapper>
+        </CalendarEventContainer>
       )}
     </Draggable>
   );

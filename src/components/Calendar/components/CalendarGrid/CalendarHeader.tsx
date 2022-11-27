@@ -2,7 +2,7 @@ import moment from "moment";
 import React from "react";
 import { WEEK_DAYS_IDS } from "./constants";
 import {
-  CalendarHeaderWrapper,
+  CalendarHeaderContainer,
   CalendarHeaderCells,
 } from "./styled-components";
 
@@ -16,7 +16,7 @@ export const CalendarHeader: React.FC<CalendarHeaderprops> = ({
   currentDate,
 }) => {
   return (
-    <CalendarHeaderWrapper>
+    <CalendarHeaderContainer>
       <h2>{currentDate.format("MMMM")}</h2>
       <CalendarHeaderCells>
         {WEEK_DAYS_IDS.map((day, i) => {
@@ -25,6 +25,6 @@ export const CalendarHeader: React.FC<CalendarHeaderprops> = ({
           );
         })}
       </CalendarHeaderCells>
-    </CalendarHeaderWrapper>
+    </CalendarHeaderContainer>
   );
 };

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CalendarFiltersWrapper = styled.div`
+export const CalendarFiltersContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,19 +10,19 @@ export const CalendarFiltersWrapper = styled.div`
   padding: 10px;
 `;
 
-export const NavigationWrapper = styled.div`
+export const NavigationContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
 `;
 
-export const FiltersWrapper = styled.div`
+export const FiltersContainer = styled.div`
   display: flex;
   align-items: center;
 `;
 
-export const FileProcessWrapper = styled.div`
+export const FileProcessContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 130px;

@@ -10,6 +10,6 @@ export const StyledTypography = styled(Typography)({
   textAlign: "center",
 });
 
-export const CheckboxGroupWrapper = styled(Box)({
+export const CheckboxGroupContainer = styled(Box)({
   marginBottom: "10px",
 });
