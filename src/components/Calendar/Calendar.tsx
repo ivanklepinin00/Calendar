@@ -7,7 +7,7 @@ import { Backdrop, CircularProgress } from "@mui/material";
 import { CalendarFilters, CalendarGrid } from "./components";
 import { fetchWorldwideHolidays, selectCalendar } from "store";
 import { filterEvents } from "./helpers";
-import { useDispatch, useSelector } from "react-redux";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { View } from "./types";
 
 export const Calendar: React.FC = () => {
@@ -16,7 +16,7 @@ export const Calendar: React.FC = () => {
     events,
     filters,
     holidays: { isLoading },
-  } = useSelector(selectCalendar);
+  } = useSelector(selectCalendar, shallowEqual);
 
   const [currentDate, setCurrentDate] = useState(moment());
   const [view] = useState<View>(View.MONTH);

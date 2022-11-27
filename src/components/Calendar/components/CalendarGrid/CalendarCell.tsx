@@ -9,7 +9,7 @@ import { HolidayComponent } from "./HolidayComponent";
 import { IconButton } from "@mui/material";
 import { RootState } from "store/configureStore";
 import { selectHolidaysForDay, setEventModal } from "store";
-import { useDispatch, useSelector } from "react-redux";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import {
   CalendarCellBody,
   CalendarCellHeader,
@@ -23,8 +23,9 @@ interface CalendarCellProps {
 export const CalendarCell: React.FC<CalendarCellProps> = React.memo(
   ({ day }) => {
     const dispatch = useDispatch();
-    const holidays = useSelector((state: RootState) =>
-      selectHolidaysForDay(state, day.value),
+    const holidays = useSelector(
+      (state: RootState) => selectHolidaysForDay(state, day.value),
+      shallowEqual,
     );
 
     const { value, isCurrentMonth, events } = day;
